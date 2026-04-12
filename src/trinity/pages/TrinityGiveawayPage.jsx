@@ -8,7 +8,7 @@ import { Disclaimer } from '../../shared/components/Disclaimer';
 const TrinityGiveawayPage = () => {
   const { t, currentLocale, language } = useLocale();
   const gw = t.trinity.giveaway;
-  const feedbackBase = currentLocale === 'default' ? '/trinity/feedback' : `/trinity/feedback/${currentLocale}`;
+  const feedbackBase = currentLocale === 'default' ? '/feedback' : `/feedback/${currentLocale}`;
   const homeBase = currentLocale === 'default' ? '/' : `/${currentLocale}`;
 
   return (

@@ -47,7 +47,7 @@ export function UrgencyBar() {
 }
 
 export function Navbar({ onEnroll }) {
-  const { t, language } = useLocale();
+  const { t, language, loading } = useLocale();
   const navItems = [
     { label: language === 'fr' ? 'La Méthode' : 'The Method', href: '#method' },
     { label: language === 'fr' ? 'Portfolio' : 'Portfolio', href: '#alumni' },

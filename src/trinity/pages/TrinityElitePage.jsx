@@ -36,7 +36,7 @@ import {
 } from '../components/SectionsBottom'
 
 const GiveawayFloatingBadge = ({ t, language }) => (
-  <Link to={language === 'fr' ? '/trinity/giveaway/fr' : '/trinity/giveaway/uk'}>
+  <Link to={language === 'fr' ? '/giveaway/fr' : '/giveaway/uk'}>
     <motion.div 
       initial={{ x: 100 }} animate={{ x: 0 }}
       className="fixed top-1/2 -translate-y-1/2 right-0 z-[101] bg-[#0F0F0F] border-y border-l border-amber-600/30 p-4 pr-5 flex items-center gap-4 cursor-pointer hover:bg-[#1A1A1A] transition-all group shadow-2xl hidden md:flex"

@@ -660,7 +660,7 @@ export function Footer() {
                 </a>
               </li>
               <li className="pt-2">
-                <Link className="text-amber-500/80 font-bold hover:text-amber-500" to="/trinity/giveaway">
+                <Link className="text-amber-500/80 font-bold hover:text-amber-500" to="/giveaway">
                   {language === 'fr' ? 'Gagnez un iPhone/Laptop →' : 'Win an iPhone/Laptop →'}
                 </Link>
               </li>
@@ -682,7 +682,7 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <Link className="transition-colors hover:text-amber-500" to="/trinity/feedback">
+                <Link className="transition-colors hover:text-amber-500" to="/feedback">
                   {language === 'fr' ? 'Avis Privé' : 'Private Feedback'}
                 </Link>
               </li>
