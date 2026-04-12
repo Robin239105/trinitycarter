@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Reveal } from '../../shared/components/Reveal';
 import { useLocale } from '../../shared/hooks/useLocale';
+import SEO from '../../shared/components/SEO';
 import { Disclaimer } from '../../shared/components/Disclaimer';
 
 const TrinityFeedbackPage = () => {

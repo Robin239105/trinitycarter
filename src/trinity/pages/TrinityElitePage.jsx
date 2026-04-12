@@ -4,6 +4,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { useLocale } from '../../shared/hooks/useLocale'
 import { Disclaimer } from '../../shared/components/Disclaimer'
 import MobileLanding from '../components/MobileLanding.jsx'
+import SEO from '../../shared/components/SEO'
 
 import {
   AboutProgramme,
@@ -131,6 +132,20 @@ export default function TrinityElitePage() {
       </div>
 
       <div className="hidden bg-surface font-body text-on-surface selection:bg-secondary-fixed selection:text-on-secondary-fixed md:block">
+        <SEO 
+          title={t.trinity.seo.elite.title}
+          description={t.trinity.seo.elite.description}
+          schema={{
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": t.trinity.seo.elite.title,
+            "description": t.trinity.seo.elite.description,
+            "publisher": {
+              "@type": "Person",
+              "name": "Trinity Carter"
+            }
+          }}
+        />
         <UrgencyBar />
         <Navbar onEnroll={() => setIsEnrollOpen(true)} />
 

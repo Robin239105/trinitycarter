@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Reveal } from '../../shared/components/Reveal';
 import { useLocale } from '../../shared/hooks/useLocale';
+import SEO from '../../shared/components/SEO';
 import { Disclaimer } from '../../shared/components/Disclaimer';
 
 const TrinityGiveawayPage = () => {
@@ -13,6 +14,10 @@ const TrinityGiveawayPage = () => {
 
   return (
     <div className="bg-[#fcf9f4] min-h-screen text-[#1c1c19] font-body selection:bg-amber-600/30 selection:text-amber-900">
+      <SEO 
+        title={t.trinity.giveaway.title}
+        description={t.trinity.giveaway.subtitle}
+      />
       {/* Header */}
       <nav className="fixed top-0 left-0 w-full z-50 px-4 sm:px-8 pt-8">
         <div className="max-w-7xl mx-auto flex justify-between items-center bg-white/80 backdrop-blur-xl rounded-full px-8 py-4 shadow-[0_10px_40px_rgba(184,150,12,0.08)]">
