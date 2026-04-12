@@ -324,7 +324,7 @@ export function ValueStack({ onEnroll }) {
 export function WhatAwaitsAfter({ onEnroll }) {
   const { t, currency, language } = useLocale();
   return (
-    <section className="bg-surface px-4 py-24 sm:px-8 md:py-32 border-y border-stone-200/60" id="programme-section">
+    <section className="bg-surface px-4 py-24 sm:px-8 md:py-32 border-y border-stone-200/60">
       <div className="mx-auto max-w-7xl">
         <div className="text-center mb-24">
           <Reveal>

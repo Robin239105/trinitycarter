@@ -146,12 +146,12 @@ export default function TrinityElitePage() {
           <PainPoints />
           <div id="programme-section">
             <AboutProgramme />
+            <ThreePillars />
+            <SocialProof />
+            <ValueStack onEnroll={() => setIsEnrollOpen(true)} />
+            <WhatAwaitsAfter onEnroll={() => setIsEnrollOpen(true)} />
+            <Guarantee />
           </div>
-          <ThreePillars />
-          <SocialProof />
-          <ValueStack onEnroll={() => setIsEnrollOpen(true)} />
-          <WhatAwaitsAfter onEnroll={() => setIsEnrollOpen(true)} />
-          <Guarantee />
           <FAQ />
           <FinalCTA onEnroll={() => setIsEnrollOpen(true)} />
         </main>
