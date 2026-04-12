@@ -181,8 +181,8 @@ export const baseFR = {
       challenge: 'Le défi de 5 jours',
       programme: 'À propos du programme complet',
       freePdfBtn: 'PDF Gratuit',
-      navJoinBtn: 'Rejoindre l\'Élite',
     },
+    navJoinBtn: 'Rejoindre l\'Élite',
     giveawayBadge: {
       line1: 'DERNIÈRE ÉTAPE : SÉLECTION DU GAGNANT',
       line2: 'TIRAGE EN COURS'

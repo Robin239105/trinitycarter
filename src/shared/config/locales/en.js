@@ -181,8 +181,8 @@ export const baseEN = {
       challenge: 'The 5-Day Challenge',
       programme: 'About the Full Programme',
       freePdfBtn: 'Free PDF',
-      navJoinBtn: 'Join the Elite',
     },
+    navJoinBtn: 'Join the Elite',
     giveawayBadge: {
       line1: 'FINAL STEP: WINNER SELECTION',
       line2: 'DRAW IN PROGRESS'
