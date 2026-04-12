@@ -78,19 +78,35 @@ const FloatingNavigator = ({ t }) => {
   }, []);
 
   return (
-    <div className="fixed bottom-8 left-1/2 -translate-x-1/2 z-[100] bg-stone-900/90 backdrop-blur-xl border border-white/10 p-1.5 rounded-full shadow-[0_20px_50px_rgba(0,0,0,0.5)] flex items-center">
-      <button 
-        onClick={() => document.getElementById('challenge-section')?.scrollIntoView({ behavior: 'smooth' })}
-        className={`px-8 py-3 rounded-full font-label text-[10px] uppercase tracking-[0.2em] transition-all italic whitespace-nowrap ${activeSection === 'challenge' ? 'bg-amber-600 text-black font-bold shadow-lg' : 'text-stone-400 hover:text-white'}`}
-      >
-        {t.trinity.nav.challenge}
-      </button>
-      <button 
-        onClick={() => document.getElementById('programme-section')?.scrollIntoView({ behavior: 'smooth' })}
-        className={`px-8 py-3 rounded-full font-label text-[10px] uppercase tracking-[0.2em] transition-all italic whitespace-nowrap ${activeSection === 'programme' ? 'bg-amber-600 text-black font-bold shadow-lg' : 'text-stone-400 hover:text-white'}`}
-      >
-        {t.trinity.nav.programme}
-      </button>
+    <div className="fixed bottom-8 left-1/2 -translate-x-1/2 z-[100] bg-stone-900/95 backdrop-blur-xl border border-white/10 p-1.5 rounded-full shadow-[0_20px_50px_rgba(0,0,0,0.5)] flex items-center overflow-hidden">
+      <div className="relative flex items-center">
+        <button 
+          onClick={() => document.getElementById('challenge-section')?.scrollIntoView({ behavior: 'smooth' })}
+          className={`relative px-8 py-3 rounded-full font-label text-[10px] uppercase tracking-[0.2em] transition-colors duration-300 italic whitespace-nowrap z-10 ${activeSection === 'challenge' ? 'text-black font-bold' : 'text-stone-400 hover:text-white'}`}
+        >
+          {activeSection === 'challenge' && (
+            <motion.div 
+              layoutId="nav-pill"
+              className="absolute inset-0 bg-amber-600 rounded-full shadow-lg"
+              transition={{ type: "spring", stiffness: 300, damping: 30 }}
+            />
+          )}
+          <span className="relative z-10">{t.trinity.nav.challenge}</span>
+        </button>
+        <button 
+          onClick={() => document.getElementById('programme-section')?.scrollIntoView({ behavior: 'smooth' })}
+          className={`relative px-8 py-3 rounded-full font-label text-[10px] uppercase tracking-[0.2em] transition-colors duration-300 italic whitespace-nowrap z-10 ${activeSection === 'programme' ? 'text-black font-bold' : 'text-stone-400 hover:text-white'}`}
+        >
+          {activeSection === 'programme' && (
+            <motion.div 
+              layoutId="nav-pill"
+              className="absolute inset-0 bg-amber-600 rounded-full shadow-lg"
+              transition={{ type: "spring", stiffness: 300, damping: 30 }}
+            />
+          )}
+          <span className="relative z-10">{t.trinity.nav.programme}</span>
+        </button>
+      </div>
     </div>
   );
 };
@@ -128,7 +144,9 @@ export default function TrinityElitePage() {
             <ChallengeRoadmap onEnroll={() => setIsEnrollOpen(true)} />
           </div>
           <PainPoints />
-          <AboutProgramme />
+          <div id="programme-section">
+            <AboutProgramme />
+          </div>
           <ThreePillars />
           <SocialProof />
           <ValueStack onEnroll={() => setIsEnrollOpen(true)} />
