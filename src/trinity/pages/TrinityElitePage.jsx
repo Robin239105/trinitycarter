@@ -115,10 +115,9 @@ export default function TrinityElitePage() {
       </div>
 
       <div className="hidden bg-surface font-body text-on-surface selection:bg-secondary-fixed selection:text-on-secondary-fixed md:block">
-        <div className="transform-gpu">
-          <UrgencyBar />
-          <Navbar onEnroll={() => setIsEnrollOpen(true)} />
-        </div>
+        <UrgencyBar />
+        <Navbar onEnroll={() => setIsEnrollOpen(true)} />
+
         <FloatingNavigator t={t} />
         <GiveawayFloatingBadge t={t} language={language} />
         

@@ -63,10 +63,10 @@ const LanguageSwitcher = () => {
     <div className="relative z-[100]" ref={dropdownRef}>
       <button 
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 bg-white/[0.03] hover:bg-white/[0.07] transition-all group"
+        className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-stone-200 bg-stone-100/50 hover:bg-stone-200/50 transition-all group shadow-sm"
       >
         <span className="text-sm">{options.find(o => o.code === (currentLocale.currentLocale || 'default'))?.flag || '🌍'}</span>
-        <span className="text-[10px] font-['Oswald'] uppercase tracking-widest text-stone-500 group-hover:text-amber-500 transition-colors italic font-bold">
+        <span className="text-[10px] font-['Oswald'] uppercase tracking-widest text-stone-700 group-hover:text-amber-600 transition-colors italic font-bold">
           {currentLocale.currentLocale === 'default' ? 'Global' : options.find(o => o.code === currentLocale.currentLocale)?.code}
         </span>
         <div className={`w-1.5 h-1.5 rounded-full bg-amber-500 transition-transform duration-300 ${isOpen ? 'scale-125' : 'scale-75 opacity-50'}`} />
@@ -78,18 +78,19 @@ const LanguageSwitcher = () => {
             initial={{ opacity: 0, y: 10, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 10, scale: 0.95 }}
-            className="absolute top-full mt-3 right-0 w-56 bg-[#0E0E0E] border border-white/10 rounded-xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] backdrop-blur-xl"
+            className="absolute top-full mt-3 right-0 w-56 bg-white border border-stone-200 rounded-xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.15)] backdrop-blur-xl z-[150]"
           >
+
             <div className="absolute -top-4 left-0 right-0 h-4 bg-transparent" />
             <div className="p-1 px-1 grid grid-cols-1 divide-y divide-white/10">
               {options.map((opt) => (
                 <button
                   key={opt.code}
                   onClick={() => handleSwitch(opt.code)}
-                  className={`w-full flex items-center justify-between gap-3 px-4 py-3.5 text-[10px] font-['Oswald'] tracking-widest uppercase transition-all text-left italic font-bold group text-stone-500 hover:text-amber-500 hover:bg-white/[0.03] ${
+                  className={`w-full flex items-center justify-between gap-3 px-4 py-3.5 text-[10px] font-['Oswald'] tracking-widest uppercase transition-all text-left italic font-bold group text-stone-600 hover:text-amber-600 hover:bg-stone-50 ${
                     (opt.code === 'default' && currentLocale.currentLocale === 'default') || 
                     (currentLocale.currentLocale === opt.code) 
-                      ? 'text-amber-600 bg-white/[0.02]' 
+                      ? 'text-amber-600 bg-amber-50/50' 
                       : ''
                   }`}
                 >
