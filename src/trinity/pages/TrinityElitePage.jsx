@@ -138,7 +138,7 @@ export default function TrinityElitePage() {
           <FinalCTA onEnroll={() => setIsEnrollOpen(true)} />
         </main>
         
-        <Disclaimer />
+        <Disclaimer variant="trinity" />
         
         <Footer />
         

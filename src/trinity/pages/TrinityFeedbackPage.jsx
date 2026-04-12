@@ -98,7 +98,7 @@ const TrinityFeedbackPage = () => {
         </Reveal>
       </main>
 
-      <Disclaimer />
+      <Disclaimer variant="trinity" />
       <footer className="py-20 border-t border-primary/5 bg-white">
         <div className="max-w-7xl mx-auto px-8 flex flex-col items-center gap-8">
           <div className="font-serif text-3xl italic tracking-tighter text-amber-600">Trinity Carter</div>
