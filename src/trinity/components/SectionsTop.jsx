@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import { useEffect, useState } from 'react'
 import { Reveal } from '../../shared/components/Reveal'
 import { useCountdown } from '../../shared/hooks/useCountdown'

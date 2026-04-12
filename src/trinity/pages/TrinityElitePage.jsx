@@ -1,18 +1,10 @@
-import { motion, AnimatePresence } from 'framer-motion'
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import { motion } from 'framer-motion'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { useLocale } from '../../shared/hooks/useLocale'
 import { Disclaimer } from '../../shared/components/Disclaimer'
-
-const PageLoader = () => (
-  <div className="fixed inset-0 bg-[#080808] flex flex-col items-center pt-[180px] z-[500]">
-    <div className="w-full h-[48px] bg-amber-600/10 fixed top-0" />
-    <div className="w-4/5 max-w-[600px] h-16 bg-white/5 rounded-lg mb-6 animate-pulse" />
-    <div className="w-3/5 max-w-[400px] h-6 bg-white/5 rounded-lg mb-12 animate-pulse" />
-    <div className="w-8 h-8 border-2 border-white/20 border-t-amber-600 rounded-full animate-spin" />
-  </div>
-);
-import { Link, useLocation, useNavigate } from 'react-router-dom'
 import MobileLanding from '../components/MobileLanding.jsx'
+
 import {
   AboutProgramme,
   ChallengeRoadmap,
@@ -22,6 +14,7 @@ import {
   PainPoints,
   UrgencyBar,
 } from '../components/SectionsTop'
+
 import {
   ExitModal,
   FAQ,
@@ -34,6 +27,15 @@ import {
   ValueStack,
   TrinityEnrollPopup,
 } from '../components/SectionsBottom'
+
+const PageLoader = () => (
+  <div className="fixed inset-0 bg-[#080808] flex flex-col items-center pt-[180px] z-[500]">
+    <div className="w-full h-[48px] bg-amber-600/10 fixed top-0" />
+    <div className="w-4/5 max-w-[600px] h-16 bg-white/5 rounded-lg mb-6 animate-pulse" />
+    <div className="w-3/5 max-w-[400px] h-6 bg-white/5 rounded-lg mb-12 animate-pulse" />
+    <div className="w-8 h-8 border-2 border-white/20 border-t-amber-600 rounded-full animate-spin" />
+  </div>
+);
 
 const GiveawayFloatingBadge = ({ t, language }) => (
   <Link to={language === 'fr' ? '/giveaway/fr' : '/giveaway/uk'}>
