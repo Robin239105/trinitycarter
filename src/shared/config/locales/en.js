@@ -1,6 +1,6 @@
 import dynamicStats from '../../utils/dynamicStats';
 
-export const en = {
+export const baseEN = {
   marcus: {
     urgencyBar: `⚡ ONLY ${dynamicStats.spotsRemaining} SPOTS LEFT FOR ${dynamicStats.currentMonth}`,
     navAboutChallenge: 'About 7-Day Challenge',
