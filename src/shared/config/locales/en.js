@@ -181,6 +181,7 @@ export const baseEN = {
       challenge: 'The 5-Day Challenge',
       programme: 'About the Full Programme',
       freePdfBtn: 'Free PDF',
+      navJoinBtn: 'Join the Elite',
     },
     giveawayBadge: {
       line1: 'FINAL STEP: WINNER SELECTION',
@@ -252,7 +253,8 @@ export const baseEN = {
       pathBContent: 'Join 12,000+ women who decided to start today and rewrite their digital future.'
     },
     finalCTA: {
-      freePdfBtn: 'Free PDF'
+      freePdfBtn: 'Free PDF',
+      navJoinBtn: 'Join the Elite',
     },
     enrollPopup: {
       firstName: 'FIRST NAME',
