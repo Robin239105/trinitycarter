@@ -323,58 +323,38 @@ export function ValueStack({ onEnroll }) {
 
 export function WhatAwaitsAfter({ onEnroll }) {
   const { t, currency, language } = useLocale();
+  const categories = t.trinity.programme?.categories || [];
+  const unlockStats = t.trinity.programme?.unlockStats || [];
+
   return (
-    <section className="bg-surface px-4 py-24 sm:px-8 md:py-32 border-y border-stone-200/60">
+    <section className="bg-surface px-4 py-24 sm:px-8 md:py-48 border-y border-stone-200/60">
       <div className="mx-auto max-w-7xl">
         <div className="text-center mb-24">
           <Reveal>
-            <span className="font-label uppercase tracking-[0.3em] text-amber-600 text-[12px] font-bold block mb-4 italic">{language === 'fr' ? 'PARTIE 2 : LE HÉRITAGE' : 'PART 2: THE LEGACY'}</span>
-            <h2 className="font-headline mb-6 text-5xl sm:text-7xl text-stone-950 leading-none">{language === 'fr' ? 'La suite après...' : 'What Awaits After...'}</h2>
-            <p className="text-stone-500 text-lg max-w-2xl mx-auto font-light italic">
-              {language === 'fr' ? 'Complétez les 5 jours. Obtenez votre invitation à la bibliothèque d\'éducation commerciale numérique la plus complète qui soit.' : 'Complete the 5 days. Earn your invitation to the most comprehensive digital business education library available.'}
+            <span className="font-label uppercase tracking-[0.3em] text-primary text-[12px] font-bold block mb-4 italic">
+              {t.trinity.programme?.badge}
+            </span>
+            <h2 className="font-headline mb-6 text-5xl sm:text-7xl lg:text-8xl text-stone-950 leading-none">
+              {t.trinity.programme?.title}
+            </h2>
+            <p className="text-stone-500 text-lg max-w-2xl mx-auto font-light italic leading-relaxed">
+              {t.trinity.programme?.subtitle}
             </p>
           </Reveal>
         </div>
 
         {/* Category Grid */}
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 mb-24">
-          {[
-            { 
-              i: '💼', 
-              t: language === 'fr' ? 'BUSINESS & ENTREPRENEURIAT' : 'BUSINESS & ENTREPRENEURSHIP', 
-              n: language === 'fr' ? '331 ressources' : '331 resources', 
-              d: language === 'fr' ? 'Startups · Systèmes Éditoriaux · Freelance · Solopreneur · Leadership · État d\'Esprit' : 'Startups · Editorial Systems · Freelancing · Solopreneur · Leadership · Mindset' 
-            },
-            { 
-              i: '📈', 
-              t: language === 'fr' ? 'MARKETING & VENTES' : 'MARKETING & SALES', 
-              n: language === 'fr' ? '600+ ressources' : '600+ resources', 
-              d: language === 'fr' ? 'Présence Numérique · Ventes · Funnels de Conversion · Médias Payants · Marketing Relationnel · SEO' : 'Digital Presence · Sales · Conversion Funnels · Paid Media · Relationship Marketing · SEO' 
-            },
-            { 
-              i: '🧠', 
-              t: language === 'fr' ? 'CROISSANCE PERSONNELLE & MENTAL' : 'PERSONAL GROWTH & MINDSET', 
-              n: language === 'fr' ? '400+ ressources' : '400+ resources', 
-              d: language === 'fr' ? 'Évolution Personnelle · Productivité Maximale · Design d\'Habitudes · Autorité Émotionnelle · Systèmes de Style de Vie' : 'Personal Evolution · Peak Productivity · Habit Design · Emotional Authority · Lifestyle Systems' 
-            },
-            { 
-              i: '🎨', 
-              t: language === 'fr' ? 'BRANDING & CRÉATION' : 'BRANDING & CREATION', 
-              n: language === 'fr' ? '280+ ressources' : '280+ resources', 
-              d: language === 'fr' ? 'Identité Visuelle · Rédaction · Curation de Contenu · Esthétique Produit · Économie du Créateur' : 'Visual Identity · Copywriting · Content Curation · Product Aesthetics · Creator Economy' 
-            },
-            { 
-              i: '⚙️', 
-              t: language === 'fr' ? 'TECH & OUTILS' : 'TECH & TOOLS', 
-              n: language === 'fr' ? '280+ ressources' : '280+ resources', 
-              d: language === 'fr' ? 'Flux IA · Automatisations · E-commerce · Finance Numérique · Tech Stack · Cybersécurité' : 'AI Workflows · Automations · E-commerce · Digital Finance · Tech Stack · Cybersecurity' 
-            },
-          ].map((x, idx) => (
+          {categories.map((x, idx) => (
             <Reveal key={x.t} delay={idx * 0.05}>
-              <div className="group flex h-full flex-col bg-surface-container-low p-10 border-l border-stone-200/60 transition-all hover:border-l-amber-600">
+              <div className="group flex h-full flex-col bg-surface-container-low p-10 border-l border-stone-200/60 transition-all hover:border-l-primary hover:shadow-xl translate-gpu">
                 <div className="text-4xl mb-6">{x.i}</div>
-                <h3 className="font-headline mb-2 text-2xl text-stone-900 leading-tight">{x.t}</h3>
-                <p className="font-label text-[10px] uppercase tracking-widest text-amber-600 mb-4 font-bold italic">{x.n}</p>
+                <h3 className="font-headline mb-2 text-2xl text-stone-900 leading-tight group-hover:text-primary transition-colors">
+                  {x.t}
+                </h3>
+                <p className="font-label text-[10px] uppercase tracking-widest text-primary mb-4 font-bold italic">
+                  {x.n}
+                </p>
                 <p className="mt-auto border-t border-stone-200/40 pt-4 text-xs font-light leading-relaxed text-stone-500 italic">
                   {x.d}
                 </p>
@@ -384,41 +364,35 @@ export function WhatAwaitsAfter({ onEnroll }) {
 
           {/* Exclusivity Statement Card */}
           <Reveal delay={0.3}>
-            <div className="flex h-full flex-col items-center justify-center bg-stone-950 p-10 text-center shadow-xl">
-              <div className="mb-6 h-1 w-12 bg-amber-600" />
-              <p className="font-serif text-lg leading-relaxed text-white italic">
-                {language === 'fr' 
-                  ? '"Ceci n\'est pas un cours. C\'est un système d\'exploitation complet pour business numérique. Révélé seulement après avoir terminé le défi."'
-                  : '"This is not a course. This is a complete digital business operating system. Revealed only after you complete the challenge."'
-                }
+            <div className="flex h-full flex-col items-center justify-center bg-stone-950 p-10 text-center shadow-2xl relative overflow-hidden group">
+              <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity" />
+              <div className="mb-6 h-1 w-12 bg-primary relative z-10" />
+              <p className="font-serif text-xl leading-relaxed text-white italic relative z-10">
+                {t.trinity.programme?.exclusivity}
               </p>
-              <div className="mt-8 font-label text-[10px] font-bold uppercase tracking-[0.3em] text-amber-500">
-                {language === 'fr' ? '980+ RESSOURCES · 47 CATÉGORIES' : '980+ RESOURCES · 47 CATEGORIES'}
+              <div className="mt-8 font-label text-[10px] font-bold uppercase tracking-[0.4em] text-primary/80 relative z-10">
+                {t.trinity.programme?.stats}
               </div>
             </div>
           </Reveal>
         </div>
 
-        {/* Format Breakdown Row */}
+        {/* Format Breakdown Row - Interactive Stats */}
         <Reveal>
           <div className="mb-24 border-y border-stone-200/60 bg-stone-50/50 py-12 px-4 overflow-x-auto no-scrollbar">
             <div className="flex flex-nowrap md:flex-wrap justify-between gap-12 min-w-max md:min-w-0 md:justify-center">
-              {[
-                { i: '📚', t: '250+', l: language === 'fr' ? 'Livres' : 'Books' },
-                { i: '✅', t: '225+', l: language === 'fr' ? 'Listes' : 'Checklists' },
-                { i: '📖', t: '173+', l: 'Guides' },
-                { i: '🎧', t: '105+', l: 'Audio' },
-                { i: '🤖', t: '89+', l: language === 'fr' ? 'Prompts IA' : 'AI Prompts' },
-                { i: '💻', t: '64+', l: 'Courses' },
-                { i: '📓', t: '46+', l: language === 'fr' ? 'Cahiers' : 'Workbooks' },
-                { i: '🛠️', t: '45+', l: 'Toolstacks' },
-                { i: '🎬', t: '61+', l: 'Videos' },
-              ].map(item => (
-                <div key={item.l} className="flex flex-col items-center gap-2">
+              {unlockStats.map((item, idx) => (
+                <motion.div 
+                  key={item.l} 
+                  className="flex flex-col items-center gap-2"
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: idx * 0.02 }}
+                >
                   <span className="text-2xl mb-1">{item.i}</span>
-                  <span className="font-headline text-xl text-stone-900 leading-none">{item.t}</span>
-                  <span className="font-label text-[8px] uppercase tracking-widest text-stone-400">{item.l}</span>
-                </div>
+                  <span className="font-headline text-2xl text-stone-950 leading-none">{item.t}</span>
+                  <span className="font-label text-[9px] uppercase tracking-widest text-stone-400 font-bold">{item.l}</span>
+                </motion.div>
               ))}
             </div>
           </div>
@@ -426,18 +400,18 @@ export function WhatAwaitsAfter({ onEnroll }) {
 
         <div className="text-center">
           <Reveal>
-            <div className="flex flex-col items-center gap-6">
+            <div className="flex flex-col items-center gap-8">
               <motion.button
                 type="button"
                 onClick={onEnroll}
-                className="w-full max-w-lg rounded-xl bg-primary py-7 font-bold tracking-widest text-on-primary shadow-2xl transition-all hover:bg-stone-900 hover:shadow-[0_12px_40px_rgba(114,92,0,0.3)] uppercase italic"
-                whileHover={{ scale: 1.01 }}
+                className="w-full max-w-xl rounded-2xl bg-primary py-8 font-bold tracking-[0.2em] text-on-primary shadow-3xl transition-all hover:bg-stone-950 hover:shadow-[0_20px_60px_rgba(114,92,0,0.35)] uppercase italic text-xl"
+                whileHover={{ scale: 1.01, y: -2 }}
                 whileTap={{ scale: 0.99 }}
               >
                 {t.trinity.ctaPrimary}
               </motion.button>
-              <p className="font-label text-[10px] text-stone-400 uppercase tracking-[0.3em] font-bold italic">
-                {language === 'fr' ? 'Terminez le défi pour débloquer tout ce qui précède' : 'Complete the challenge to unlock everything above'}
+              <p className="font-label text-[11px] text-stone-400 uppercase tracking-[0.4em] font-bold italic">
+                {language === 'fr' ? 'Terminez le défi pour débloquer l\'accès complet' : 'Complete the challenge to unlock full invitation access'}
               </p>
             </div>
           </Reveal>
@@ -632,9 +606,19 @@ export function Footer() {
   return (
     <footer className="mt-16 bg-stone-950 px-6 py-20 text-white/90 sm:px-12 sm:py-24">
       <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-16 md:flex-row">
-        <div className="max-w-xs space-y-6">
-          <div className="font-serif text-2xl text-amber-500 italic">Trinity Carter</div>
-          <p className="text-sm leading-relaxed text-stone-400/90">
+        <div className="max-w-xs space-y-8">
+          <motion.div 
+            className="flex items-center"
+            whileHover={{ scale: 1.02 }}
+            transition={{ type: 'spring', stiffness: 300 }}
+          >
+            <img 
+              src="/trinity-logo.png" 
+              alt="Trinity Carter" 
+              className="h-20 w-auto object-contain md:h-24 grayscale invert opacity-90"
+            />
+          </motion.div>
+          <p className="text-sm leading-relaxed text-stone-400/90 font-light italic">
             {language === 'fr' ? 'Élever les voix féminines grâce au positionnement stratégique et au design éditorial.' : 'Elevating female voices through strategic positioning and editorial design.'}
           </p>
         </div>

@@ -93,9 +93,17 @@ export function Navbar({ onEnroll }) {
             : 'shadow-[0_10px_40px_rgba(184,150,12,0.08)]'
         }`}
       >
-        <div className="font-serif text-2xl italic tracking-tighter text-stone-900">
-          Trinity Carter
-        </div>
+        <motion.div 
+          className="flex items-center cursor-pointer"
+          whileHover={{ scale: 1.02 }}
+          transition={{ type: 'spring', stiffness: 300 }}
+        >
+          <img 
+            src="/trinity-logo.png" 
+            alt="Trinity Carter" 
+            className="h-20 w-auto object-contain md:h-32"
+          />
+        </motion.div>
 
         <div className="hidden items-center gap-10 md:flex">
           {navItems.map((item, i) => (
@@ -206,7 +214,7 @@ export function Hero({ onEnroll }) {
           </motion.div>
 
           <motion.h1
-            className="font-headline font-medium text-5xl leading-[1.05] tracking-tighter text-on-background sm:text-6xl md:text-7xl w-full"
+            className="font-headline font-medium text-6xl leading-[1] tracking-tight text-on-background sm:text-8xl md:text-[110px] w-full"
             initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1], delay: 0.28 }}
@@ -624,4 +632,69 @@ export function ChallengeRoadmap({ onEnroll }) {
       </div>
     </section>
   )
+}
+
+export function TheVoice() {
+  const { t } = useLocale();
+  return (
+    <section className="relative overflow-hidden bg-surface py-24 sm:py-32 md:py-48">
+      {/* Cinematic Background Elements */}
+      <div className="absolute left-1/2 top-1/2 h-[800px] w-[800px] -translate-x-1/2 -translate-y-1/2 opacity-[0.03] pointer-events-none">
+        <div className="h-full w-full rounded-full bg-primary blur-[120px]" />
+      </div>
+
+      <div className="mx-auto max-w-7xl px-4 sm:px-8">
+        <div className="grid items-center gap-16 lg:grid-cols-2">
+          <Reveal className="order-2 lg:order-1">
+            <div className="space-y-10">
+              <div className="inline-flex items-center gap-3 rounded-full bg-primary/10 px-6 py-2 border border-primary/20">
+                <span className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse" />
+                <span className="font-label text-[10px] font-bold tracking-[0.3em] text-primary uppercase">
+                  {t.trinity.voice.badge}
+                </span>
+              </div>
+
+              <h2 className="font-headline text-5xl leading-[1.1] sm:text-7xl lg:text-8xl">
+                {t.trinity.voice.title}
+              </h2>
+
+              <div className="space-y-8 relative">
+                <div className="absolute -left-8 top-0 text-8xl font-serif text-primary/10 select-none">"</div>
+                <p className="font-serif text-2xl italic leading-relaxed text-on-surface lg:text-3xl">
+                  {t.trinity.voice.quote1}
+                </p>
+                <p className="font-serif text-2xl italic leading-relaxed text-primary lg:text-3xl">
+                  {t.trinity.voice.quote2}
+                </p>
+                
+                <div className="pt-8">
+                  <div className="h-px w-24 bg-primary/30 mb-6" />
+                  <p className="font-label text-sm font-bold tracking-[0.4em] text-outline uppercase">
+                    — {t.trinity.voice.signature}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </Reveal>
+
+          <Reveal className="order-1 lg:order-2" delay={0.2}>
+            <div className="relative mx-auto max-w-md lg:max-w-none">
+               <div className="aspect-[4/5] overflow-hidden rounded-[4rem] rounded-bl-sm bg-surface-container-low shadow-3xl grayscale hover:grayscale-0 transition-all duration-1000">
+                <img 
+                  src={img.atelier} 
+                  alt="Trinity Carter Persona" 
+                  className="h-full w-full object-cover scale-110 hover:scale-100 transition-transform duration-1000"
+                />
+              </div>
+              
+              {/* Abstract Floating UI elements for prestige */}
+              <div className="absolute -right-8 -top-8 hidden h-32 w-32 rounded-full border border-primary/20 bg-surface/50 backdrop-blur-md lg:flex items-center justify-center">
+                 <span className="font-serif text-4xl italic text-primary">TC</span>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </div>
+    </section>
+  );
 }

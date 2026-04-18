@@ -22,9 +22,13 @@ function MobileHeader({ menuOpen, setMenuOpen }) {
       </div>
       <nav className="glass-nav border-b border-white/10 bg-surface/80 shadow-[0_10px_40px_rgba(184,150,12,0.08)] backdrop-blur-xl dark:bg-stone-900/80">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-          <span className="font-serif text-2xl tracking-tighter text-stone-900 italic dark:text-stone-50">
-            Trinity Carter
-          </span>
+          <div className="flex items-center">
+            <img 
+              src="/trinity-logo.png" 
+              alt="Trinity Carter" 
+              className="h-10 w-auto object-contain dark:invert"
+            />
+          </div>
           <div className="flex items-center gap-3">
             <LanguageSwitcher variant="trinity" />
             <button
@@ -281,13 +285,36 @@ export default function MobileLanding({ onEnroll }) {
                 fetchPriority="high"
               />
             </motion.div>
-            <div className="absolute -right-4 -bottom-6 max-w-[200px] rounded-2xl bg-surface-container-lowest p-6 shadow-xl">
+            <div className="absolute -right-4 -bottom-6 max-w-[200px] rounded-2xl bg-surface-container-lowest p-6 shadow-xl border border-primary/10">
               <p className="font-serif text-2xl text-primary italic">12k+</p>
               <p className="text-[10px] leading-tight font-bold tracking-widest text-on-surface-variant uppercase">
                 {language === 'fr' ? 'Étudiantes Alumni à travers le monde' : 'Alumni Students Worldwide'}
               </p>
             </div>
           </div>
+
+          {/* The Voice - Mobile Integration */}
+          <section className="mt-12 space-y-8 bg-surface-container-lowest p-10 rounded-3xl border border-primary/5">
+            <Reveal>
+              <span className="font-label text-[10px] uppercase tracking-[0.3em] text-primary font-bold italic block mb-4">
+                {language === 'fr' ? 'SA PHILOSOPHIE' : 'HER PHILOSOPHY'}
+              </span>
+              <h2 className="font-headline text-3xl leading-tight text-on-background">
+                {language === 'fr' ? 'Bâtir une autorité qui dure.' : 'Building Authority that Lasts.'}
+              </h2>
+              <p className="mt-6 font-serif text-lg leading-relaxed text-stone-500 italic">
+                {language === 'fr' 
+                  ? '"Le vrai luxe n\'est pas d\'être vue, mais d\'être comprise. Votre marque numérique est votre héritage verbal."' 
+                  : '"True luxury is not in being seen, but in being understood. Your digital brand is your verbal legacy."'
+                }
+              </p>
+              <div className="mt-8 flex items-center gap-4">
+                <div className="h-px flex-1 bg-primary/20" />
+                <span className="font-label text-[9px] uppercase tracking-widest text-primary/40 font-bold">TC ORIGINS</span>
+                <div className="h-px flex-1 bg-primary/20" />
+              </div>
+            </Reveal>
+          </section>
 
           <div className="mt-16 overflow-hidden">
             <p className="mb-4 text-center font-label text-[10px] font-bold tracking-[0.2em] text-outline uppercase opacity-40">
@@ -427,7 +454,13 @@ export default function MobileLanding({ onEnroll }) {
           className="bg-stone-950 px-6 py-24 text-center text-surface"
         >
           <Reveal>
-            <div className="font-serif text-3xl italic text-amber-600 mb-8">Trinity Carter</div>
+            <div className="flex flex-col items-center mb-8">
+              <img 
+                src="/trinity-logo.png" 
+                alt="Trinity Carter" 
+                className="h-16 w-auto object-contain grayscale invert opacity-90"
+              />
+            </div>
             <h2 className="font-headline mb-6 text-4xl text-white">
               {language === 'fr' ? 'Prête à' : 'Ready to'} <span className="font-serif text-primary italic">{language === 'fr' ? 'S\'Enflammer' : 'Ignite'}</span>?
             </h2>

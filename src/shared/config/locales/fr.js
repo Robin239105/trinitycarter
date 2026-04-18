@@ -288,6 +288,38 @@ export const baseFR = {
       disclaimer: '* Les gagnants sont annoncés le 1er de chaque mois via email privé.',
       privateLink: 'Laissez un commentaire privé à la place →',
       backLink: '← Retour au tunnel'
+    },
+    voice: {
+      badge: "LA VOIX DE TRINITY",
+      title: "L'IDENTITÉ ÉLITE.",
+      quote1: "La plupart des femmes restent bloquées parce qu'elles essaient d'être comme tout le monde dans un océan de bruit.",
+      quote2: "La véritable autorité n'est pas une question de volume ; c'est d'être la personne la plus certaine dans la pièce. Je ne vous apprends pas à vendre ; je vous apprends à être recherchée.",
+      signature: "Trinity Carter"
+    },
+    programme: {
+      badge: "PARTIE 2 : L'HÉRITAGE",
+      title: "CE QUI VOUS ATTEND APRÈS...",
+      subtitle: "Terminez les 5 jours. Gagnez votre invitation à la bibliothèque d'éducation commerciale numérique la plus complète qui soit.",
+      categories: [
+          { i: '💼', t: 'AFFAIRES & ENTREPRENEURIAT', n: '331 ressources', d: 'Startups · Systèmes Éditoriaux · Freelance · Solopreneur · Leadership · État d\'Esprit' },
+          { i: '📈', t: 'MARKETING & VENTES', n: '600+ ressources', d: 'Présence Numérique · Ventes · Funnels de Conversion · Médias Payants · Marketing Relationnel · SEO' },
+          { i: '🧠', t: 'CROISSANCE PERSONNELLE & MENTAL', n: '400+ ressources', d: 'Évolution Personnelle · Productivité Maximale · Design d\'Habitudes · Autorité Émotionnelle · Systèmes de Style de Vie' },
+          { i: '🎨', t: 'BRANDING & CRÉATION', n: '280+ ressources', d: 'Identité Visuelle · Rédaction · Curation de Contenu · Esthétique Produit · Économie du Créateur' },
+          { i: '⚙️', t: 'TECH & OUTILS', n: '280+ ressources', d: 'Flux IA · Automatisations · E-commerce · Finance Numérique · Tech Stack · Cybersécurité' }
+      ],
+      exclusivity: '"Ceci n\'est pas un cours. C\'est un système d\'exploitation complet pour business numérique. Révélé seulement après avoir terminé le défi."',
+      stats: '980+ RESSOURCES · 47 CATÉGORIES',
+      unlockStats: [
+        { i: '📚', t: '250+', l: 'Livres' },
+        { i: '✅', t: '225+', l: 'Checklists' },
+        { i: '📖', t: '173+', l: 'Guides' },
+        { i: '🎧', t: '105+', l: 'Audio' },
+        { i: '🤖', t: '89+', l: 'Prompts IA' },
+        { i: '💻', t: '64+', l: 'Cours' },
+        { i: '📓', t: '46+', l: 'Cahiers' },
+        { i: '🛠️', t: '45+', l: 'Toolstacks' },
+        { i: '🎬', t: '61+', l: 'Vidéos' }
+      ]
     }
   },
   common: {

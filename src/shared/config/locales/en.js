@@ -277,6 +277,38 @@ export const baseEN = {
         title: "Direct Feedback Protocol",
         description: "Share your experience with Trinity Carter directly. Your feedback helps us maintain our standard of digital excellence."
       }
+    },
+    voice: {
+      badge: "THE VOICE OF TRINITY",
+      title: "ELITE IDENTITY.",
+      quote1: "Most women stay stuck because they try to be like everyone else in an ocean of noise.",
+      quote2: "True authority isn't about volume; it's about being the most certain person in the room. I don't teach you how to sell; I teach you how to be sought after.",
+      signature: "Trinity Carter"
+    },
+    programme: {
+      badge: "PART 2: THE LEGACY",
+      title: "WHAT AWAITS AFTER...",
+      subtitle: "Complete the 5 days. Earn your invitation to the most comprehensive digital business education library available.",
+      categories: [
+          { i: '💼', t: 'BUSINESS & ENTREPRENEURSHIP', n: '331 resources', d: 'Startups · Editorial Systems · Freelancing · Solopreneur · Leadership · Mindset' },
+          { i: '📈', t: 'MARKETING & SALES', n: '600+ resources', d: 'Digital Presence · Sales · Conversion Funnels · Paid Media · Relationship Marketing · SEO' },
+          { i: '🧠', t: 'GROWTH & MINDSET', n: '400+ resources', d: 'Personal Evolution · Peak Productivity · Habit Design · Emotional Authority · Lifestyle Systems' },
+          { i: '🎨', t: 'BRANDING & CREATIVE', n: '280+ resources', d: 'Visual Identity · Copywriting · Content Curation · Product Aesthetics · Creator Economy' },
+          { i: '⚙️', t: 'TECH & TOOLS', n: '280+ resources', d: 'AI Workflows · Automations · E-commerce · Digital Finance · Tech Stack · Cybersecurity' }
+      ],
+      exclusivity: '"This is not a course. This is a complete digital business operating system. Revealed only after you complete the challenge."',
+      stats: '980+ RESOURCES · 47 CATEGORIES',
+      unlockStats: [
+        { i: '📚', t: '250+', l: 'Books' },
+        { i: '✅', t: '225+', l: 'Checklists' },
+        { i: '📖', t: '173+', l: 'Guides' },
+        { i: '🎧', t: '105+', l: 'Audio' },
+        { i: '🤖', t: '89+', l: 'AI Prompts' },
+        { i: '💻', t: '64+', l: 'Courses' },
+        { i: '📓', t: '46+', l: 'Workbooks' },
+        { i: '🛠️', t: '45+', l: 'Toolstacks' },
+        { i: '🎬', t: '61+', l: 'Videos' }
+      ]
     }
   },
   common: {

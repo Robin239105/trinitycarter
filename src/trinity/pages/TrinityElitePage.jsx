@@ -7,13 +7,11 @@ import MobileLanding from '../components/MobileLanding.jsx'
 import SEO from '../../shared/components/SEO'
 
 import {
-  AboutProgramme,
-  ChallengeRoadmap,
-  CredibilityStats,
   Hero,
   Navbar,
   PainPoints,
   UrgencyBar,
+  TheVoice,
 } from '../components/SectionsTop'
 
 import {
@@ -155,6 +153,7 @@ export default function TrinityElitePage() {
         <main className="contain-layout">
           <div id="challenge-section">
             <Hero onEnroll={() => setIsEnrollOpen(true)} />
+            <TheVoice />
             <CredibilityStats />
             <ChallengeRoadmap onEnroll={() => setIsEnrollOpen(true)} />
           </div>
